@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>எளிய தமிழ் சேவை மையம் - முகப்பு</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #e8fff0;
+      --bg-soft: #e1faea;
+      --bg-tint: #d5eedf;
+      --white: #ffffff;
+      --green-900: #005134;
+      --green-800: #176b48;
+      --green-200: #a4f3c7;
+      --ink: #0a1f16;
+      --ink-2: #3f4942;
+      --muted: #6f7a72;
+      --footer: #20352b;
+      --footer-ink: #d0e8d9;
+      --shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --font: 'Noto Sans Tamil', 'Nirmala UI', 'FreeSans', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 12px rgba(20, 40, 30, 0.06);
+    }
+
+    .header-inner {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand { display: flex; align-items: center; gap: 8px; }
+    .brand-icon { font-size: 22px; }
+    .brand-title {
+      color: var(--green-900);
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: -0.5px;
+    }
+    .brand-sub { color: var(--ink-2); font-size: 14px; font-weight: 600; line-height: 1.5; }
+
+    nav { display: flex; gap: 12px; }
+    nav a {
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      color: var(--ink-2);
+      font-size: 16px;
+    }
+    nav a.active { background: var(--green-800); color: #fff; }
+    nav a:hover:not(.active) { color: var(--green-900); }
+
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+
+    .voice-chip {
+      background: var(--bg-soft);
+      color: var(--green-900);
+      padding: 6px 12px;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    .btn-primary {
+      background: var(--green-800);
+      color: #fff;
+      padding: 13px 20px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 18px;
+      box-shadow: var(--shadow);
+      white-space: nowrap;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      color: var(--green-900);
+      padding: 6px 10px;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: var(--bg);
+      padding: 48px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-visual {
+      grid-column: 8 / span 5;
+      position: relative;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: -24px;
+      background: rgba(164, 243, 199, 0.3);
+      filter: blur(20px);
+      border-radius: 24px;
+      transform: rotate(2deg);
+      z-index: 0;
+    }
+
+    .hero-card {
+      position: relative;
+      z-index: 1;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+    }
+
+    .hero-photo {
+      aspect-ratio: 4 / 3;
+      width: 100%;
+      object-fit: cover;
+      background: var(--bg-tint);
+    }
+
+    .badge {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(6px);
+      padding: 8px 14px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+      z-index: 2;
+    }
+    .badge-top { top: 16px; left: 16px; display: flex; gap: 8px; align-items: center; }
+    .badge-top strong { display: block; font-size: 14px; color: var(--ink); }
+    .badge-top span { display: block; font-size: 11px; color: var(--green-900); }
+    .badge-bottom { bottom: 16px; right: 16px; display: flex; gap: 8px; align-items: center; }
+    .badge-bottom strong { display: block; font-size: 14px; color: var(--ink); }
+    .badge-bottom span { display: block; font-size: 11px; color: var(--ink-2); }
+
+    .hero-text { grid-column: 1 / span 7; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-tint);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+    }
+    .pill-dot { width: 10px; height: 10px; border-radius: 50%; background: #176b48; }
+
+    .hero h1 {
+      margin-top: 24px;
+      font-size: 36px;
+      line-height: 1.4;
+      letter-spacing: -0.9px;
+      font-weight: 600;
+    }
+    .hero h1 .highlight {
+      color: var(--green-900);
+      font-weight: 700;
+      text-decoration: underline wavy var(--green-200);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 6px;
+    }
+
+    .hero p.lead {
+      margin-top: 20px;
+      color: var(--ink-2);
+      font-size: 20px;
+      line-height: 1.7;
+      max-width: 580px;
+    }
+
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+    .btn-large {
+      background: var(--green-900);
+      color: #fff;
+      min-height: 58px;
+      padding: 0 32px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+      line-height: 1.4;
+      text-align: center;
+    }
+    .btn-large:hover { background: var(--green-800); }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--green-900);
+      min-height: 58px;
+      padding: 0 20px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .micro-pills {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 28px;
+      color: var(--ink-2);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .micro-pills .sep { color: var(--muted); font-weight: 400; }
+
+    /* ---------- Sections ---------- */
+    section { padding: 48px 0; }
+    .section-tint { background: var(--bg); }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--green-900);
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: 28px;
+      line-height: 1.5;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .section-sub { color: var(--ink-2); font-size: 18px; margin-top: 8px; }
+
+    .btn-soft {
+      background: var(--white);
+      color: var(--green-900);
+      padding: 10px 16px;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 16px;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ---------- Form selection cards ---------- */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card-head { display: flex; gap: 20px; align-items: flex-start; }
+
+    .card-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-lg);
+      background: var(--bg-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .card-tags { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .tag-form {
+      background: var(--bg-tint);
+      color: var(--ink-2);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 9999px;
+    }
+    .tag-cat { color: var(--green-900); font-size: 12px; font-weight: 600; }
+
+    .card h3 {
+      font-size: 22px;
+      line-height: 1.5;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .card p.desc { color: var(--ink-2); font-size: 16px; margin-top: 4px; }
+
+    .card-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-audio {
+      background: var(--bg-soft);
+      color: var(--green-900);
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .btn-open {
+      background: var(--green-900);
+      color: #fff;
+      min-height: 50px;
+      padding: 13px 20px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    /* ---------- Benefits ---------- */
+    .benefits-head { text-align: center; max-width: 760px; margin: 0 auto 32px; }
+    .benefits-head .pill-soft {
+      display: inline-block;
+      background: var(--bg-tint);
+      color: var(--green-900);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 4px 14px;
+      border-radius: 9999px;
+    }
+    .benefits-head h2 { margin-top: 12px; }
+    .benefits-head p { color: var(--ink-2); font-size: 18px; margin-top: 12px; }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .benefit {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--bg-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    .benefit h3 { font-size: 22px; line-height: 1.5; font-weight: 600; padding-top: 8px; }
+    .benefit p { color: var(--ink-2); font-size: 16px; line-height: 1.75; }
+
+    /* ---------- FAQ ---------- */
+    .faq-wrap { max-width: 880px; margin: 0 auto; }
+    .faq-head { text-align: center; margin-bottom: 32px; }
+    .faq-head .faq-icon { font-size: 26px; margin-bottom: 8px; }
+    .faq-head p { color: var(--ink-2); font-size: 18px; margin-top: 8px; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+
+    .faq-q {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 64px;
+      padding: 16px 20px;
+      text-align: left;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .faq-toggle {
+      background: var(--bg-soft);
+      width: 36px;
+      height: 36px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green-900);
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+    .faq-item.open .faq-toggle { transform: rotate(180deg); }
+
+    .faq-a {
+      display: none;
+      padding: 0 20px 18px;
+      color: var(--ink-2);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ---------- Hero-level CTA secondary ---------- */
+    .hero-spacer { height: 0; }
+
+    /* ---------- Feedback ---------- */
+    .feedback { background: var(--bg); padding: 48px 0; }
+    .feedback-wrap { max-width: 800px; margin: 0 auto; }
+
+    .feedback-head { text-align: center; margin-bottom: 32px; }
+    .feedback-head .fb-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 9999px;
+      background: var(--bg-tint);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .feedback-head p { color: var(--ink-2); font-size: 18px; margin-top: 8px; }
+
+    .form-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    .field-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .field-label .opt { color: var(--muted); font-size: 14px; font-weight: 600; }
+    .field-label .req { color: #b42318; font-size: 14px; font-weight: 600; }
+
+    .input {
+      width: 100%;
+      min-height: 56px;
+      padding: 16px;
+      border: 1px solid transparent;
+      border-radius: var(--radius-md);
+      background: rgba(225, 250, 234, 0.5);
+      font-family: var(--font);
+      font-size: 16px;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .input::placeholder { color: #9ca3af; }
+    .input:focus { border-color: var(--green-800); background: var(--white); }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--green-900);
+      color: #fff;
+      min-height: 58px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 18px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+    }
+    .submit-btn:hover { background: var(--green-800); }
+    .submit-btn:disabled { opacity: 0.6; cursor: wait; }
+
+    .status {
+      display: none;
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .status.show { display: block; }
+    .status.success { background: var(--bg-soft); color: var(--green-900); }
+    .status.error { background: #fdecea; color: #b42318; }
+
+    /* ---------- Footer ---------- */
+    footer { background: var(--footer); color: var(--footer-ink); padding: 48px 0 24px; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+      gap: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(208, 232, 217, 0.15);
+    }
+
+    .footer-brand { display: flex; gap: 8px; align-items: center; color: var(--bg); font-size: 22px; font-weight: 600; line-height: 1.5; }
+    .footer-desc { margin-top: 12px; font-size: 16px; line-height: 1.75; }
+    .footer-voice {
+      margin-top: 16px;
+      background: rgba(208, 232, 217, 0.2);
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 14px;
+      color: var(--bg);
+      font-weight: 600;
+    }
+
+    footer h4 { color: var(--bg); font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    footer li, footer p { font-size: 16px; line-height: 1.75; }
+    footer a { text-decoration: underline; text-underline-offset: 3px; }
+
+    .footer-note {
+      margin-top: 24px;
+      background: rgba(208, 232, 217, 0.15);
+      padding: 20px;
+      border-radius: 12px;
+      display: flex;
+      gap: 8px;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .footer-note strong { color: var(--green-200); font-weight: 600; }
+    .footer-note span.body { color: var(--bg); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 20px;
+      font-size: 14px;
+      color: #c7e0d1;
+      font-weight: 600;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1024px) {
+      .hero-visual { grid-column: 1 / -1; }
+      .hero-text { grid-column: 1 / -1; }
+      .benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .voice-chip { display: none; }
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 12px 20px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+      }
+      nav.open { display: flex; }
+      .menu-toggle { display: block; }
+      .btn-primary { display: none; }
+      .hero h1 { font-size: 28px; }
+      .hero p.lead { font-size: 18px; }
+      h2 { font-size: 24px; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .card, .form-card { padding: 24px; }
+    }
+
+    @media (max-width: 560px) {
+      .container { padding: 0 16px; }
+      .hero h1 { font-size: 26px; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .btn-large, .btn-secondary { width: 100%; justify-content: center; }
+      .brand-title { font-size: 18px; }
+      .faq-q { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="#top" class="brand">
+          <span class="brand-icon">🌿</span>
+          <div>
+            <div class="brand-title">எளிய தமிழ் சேவை<br />மையம்</div>
+            <div class="brand-sub">அனைவருக்கும் எளிய அரசு &amp;<br />பொதுச் சேவைகள்</div>
+          </div>
+        </a>
+
+        <nav id="mainNav">
+          <a href="#top" class="active">முகப்பு</a>
+          <a href="#forms-section">படிவங்கள்</a>
+          <a href="#about">எங்களைப் பற்றி</a>
+          <a href="#feedback-section">கருத்துகள்</a>
+          <a href="#faq">உதவி</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="voice-chip">🔊 குரல்<br />உதவி தயார்</div>
+          <a href="#forms-section" class="btn-primary">படிவத்தைத் தேர்ந்தெடுக்கவும்</a>
+          <button class="menu-toggle" id="menuToggle" aria-label="மெனு">☰</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-visual">
+          <div class="hero-card">
+            <img
+              class="hero-photo"
+              alt="தாத்தாவும் பேத்தியும் கைப்பேசியில் தமிழ் படிவத்தை இன்முகத்துடன் நிரப்புகின்றனர்"
+              src="https://www.figma.com/api/mcp/asset/7e0075d8-8d3f-4a6f-a0ea-b581a73cef34/20a16.png"
+              onerror="this.style.display='none'"
+            />
+          </div>
+          <div class="badge badge-top">
+            <span style="font-size:20px">🔊</span>
+            <div>
+              <strong>100% எளிய குரல் வழிகாட்டல்</strong>
+              <span>கேட்டுக்கொண்டே எழுதலாம்</span>
+            </div>
+          </div>
+          <div class="badge badge-bottom">
+            <span style="font-size:22px">🇮🇳</span>
+            <div>
+              <strong>அனைவருக்கும் இலவச சேவை</strong>
+              <span>எளிதான தமிழ் குடிமக்கள் தளம்</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-text">
+          <span class="pill"><span class="pill-dot"></span>முதியோருக்கும் எளிய மக்களுக்கும் தனித்துவமான வழிகாட்டி</span>
+          <h1>தமிழ் தெரிந்தால் போதும்!<br /><span class="highlight">படிவங்களை நீங்களே</span> நிரப்பலாம்.</h1>
+          <p class="lead">
+            ஆங்கிலம் தெரியவில்லை என்றாலும் கவலை வேண்டாம். ஒவ்வொரு கேள்வியையும் தமிழில் கேட்டு, புரிந்துகொண்டு, படிப்படியாக உங்கள் விவரங்களை நிரப்புங்கள்.
+          </p>
+          <div class="cta-row">
+            <a href="#forms-section" class="btn-large">🔊 படிவத்தை நிரப்பத் தொடங்குங்கள்</a>
+            <button class="btn-secondary" onclick="speak('எப்படி பயன்படுத்துவது. படிவங்களைத் தேர்ந்தெடுத்து, கேள்விகளை ஒவ்வொன்றாக நிரப்புங்கள்.')">🔊 எப்படி பயன்படுத்துவது?</button>
+          </div>
+          <div class="micro-pills">
+            <span>✓ கட்டணமில்லா சேவை</span>
+            <span class="sep">•</span>
+            <span>✓ முழு தமிழ் ஒலி உதவி</span>
+            <span class="sep">•</span>
+            <span>✓ பெரிய எழுத்துகள் &amp; பொத்தான்கள்</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FORM SELECTION ============ -->
+  <section class="section-tint" id="forms-section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">📄 படிவத் தொகுப்பு</span>
+          <h2>உங்களுக்கு தேவையான படிவத்தைத் தேர்ந்தெடுக்கவும்</h2>
+          <p class="section-sub">கீழே உள்ள நான்கு முக்கிய படிவங்களில் ஒன்றை தேர்வு செய்து எளிதாக நிரப்புங்கள்.</p>
+        </div>
+        <button class="btn-soft" onclick="speak('இந்த பகுதியை வாசிக்க. உங்களுக்கு தேவையான படிவத்தைத் தேர்ந்தெடுக்கவும்.')">🔊 இந்த பகுதியை வாசிக்க</button>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-head">
+            <div class="card-icon">👶</div>
+            <div>
+              <div class="card-tags">
+                <span class="tag-form">படிவம் 01</span>
+                <span class="tag-cat">நகராட்சி &amp; ஊராட்சி</span>
+              </div>
+              <h3>பிறப்புச் சான்றிதழ்</h3>
+              <p class="desc">குழந்தை மற்றும் பெற்றோர் விவரங்களை நிரப்ப</p>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-audio" onclick="speak('பிறப்புச் சான்றிதழ். குழந்தை மற்றும் பெற்றோர் விவரங்களை நிரப்ப.')">🔊 கேட்க</button>
+            <a href="#" class="btn-open">படிவத்தைத் திறக்க →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="card-icon">🚆</div>
+            <div>
+              <div class="card-tags">
+                <span class="tag-form">படிவம் 02</span>
+                <span class="tag-cat">இந்திய ரயில்வே முன்பதிவு</span>
+              </div>
+              <h3>ரயில் பயணச்சீட்டு</h3>
+              <p class="desc">பயண விவரங்களை எளிதாக நிரப்ப</p>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-audio" onclick="speak('ரயில் பயணச்சீட்டு. பயண விவரங்களை எளிதாக நிரப்ப.')">🔊 கேட்க</button>
+            <a href="#" class="btn-open">படிவத்தைத் திறக்க →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="card-icon">📜</div>
+            <div>
+              <div class="card-tags">
+                <span class="tag-form">படிவம் 03</span>
+                <span class="tag-cat">வருவாய்த்துறை அரசு சேவை</span>
+              </div>
+              <h3>தமிழ்நாடு சமூகச் சான்றிதழ்</h3>
+              <p class="desc">சான்றிதழ் விண்ணப்ப விவரங்களை நிரப்ப</p>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-audio" onclick="speak('தமிழ்நாடு சமூகச் சான்றிதழ். சான்றிதழ் விண்ணப்ப விவரங்களை நிரப்ப.')">🔊 கேட்க</button>
+            <a href="#" class="btn-open">படிவத்தைத் திறக்க →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="card-icon">🏦</div>
+            <div>
+              <div class="card-tags">
+                <span class="tag-form">படிவம் 04</span>
+                <span class="tag-cat">வங்கி சேமிப்பு &amp; சலான்</span>
+              </div>
+              <h3>வங்கி பணம் செலுத்தும் படிவம்</h3>
+              <p class="desc">பண வைப்புக்கான விவரங்களை நிரப்ப</p>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-audio" onclick="speak('வங்கி பணம் செலுத்தும் படிவம். பண வைப்புக்கான விவரங்களை நிரப்ப.')">🔊 கேட்க</button>
+            <a href="#" class="btn-open">படிவத்தைத் திறக்க →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENEFITS ============ -->
+  <section class="section-tint" id="about">
+    <div class="container">
+      <div class="benefits-head">
+        <span class="pill-soft">நன்மை &amp; சிறப்பம்சங்கள்</span>
+        <h2>டிஜிட்டல் சேவைகள் இனி யாருக்கும் கடினமில்லை!</h2>
+        <p>எந்தவித பயமுமின்றி குடிமக்கள் தங்களின் நிர்வாகத் தேவைகளை சொந்தமாக நிறைவேற்றிக்கொள்ள<br />நாங்கள் உதவுகிறோம்.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit">
+          <div class="benefit-icon">🔤</div>
+          <h3>எளிய தமிழ்</h3>
+          <p>கேள்விகளை எளிதாகப் புரிந்துகொள்ளுங்கள். சிக்கலான சொற்கள் இன்றி அன்றாட வாழ்வியல் தமிழில் எழுதப்பட்டுள்ளது.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">🎧</div>
+          <h3>குரல் வழி உதவி</h3>
+          <p>கேள்விகளைக் கேட்டு அறிந்துகொள்ளுங்கள். படிக்கச் சிரமப்படும் பெரியவர்களுக்கு தெளிவான தமிழ் குரல் துணை.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">🪜</div>
+          <h3>படிப்படியான<br />வழிகாட்டுதல்</h3>
+          <p>ஒவ்வொரு விவரத்தையும் உங்கள் வேகத்தில் நிரப்புங்கள். அவசரமின்றி ஒவ்வொரு படியாக முடிக்கும் எளிய அமைப்பு.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">📱</div>
+          <h3>கைப்பேசியில் எளிதாக</h3>
+          <p>எங்கிருந்தும் இணையதளத்தைப் பயன்படுத்துங்கள். எந்தவொரு சாதாரண ஸ்மார்ட்போனிலும் தடையின்றி இயங்கும் வடிவம்.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section-tint" id="faq" style="background: rgba(225,250,234,0.5);">
+    <div class="container">
+      <div class="faq-wrap">
+        <div class="faq-head">
+          <div class="faq-icon">❓</div>
+          <h2>அடிக்கடி கேட்கப்படும் கேள்விகள் (FAQ)</h2>
+          <p>பொதுமக்களுக்கு எழும் சந்தேகங்களுக்கான எளிய விளக்கங்கள்</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q">
+              <span>1. ஆங்கிலம் தெரியாமல் இந்த இணையதளத்தைப் பயன்படுத்த முடியுமா?</span>
+              <span class="faq-toggle">▾</span>
+            </button>
+            <div class="faq-a">ஆம். இந்த இணையதளம் முழுவதும் தமிழில் உள்ளது. ஒவ்வொரு கேள்வியையும் குரல் வழியாகவும் கேட்கலாம்.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              <span>2. குரல் வழி உதவி எப்படி வேலை செய்கிறது?</span>
+              <span class="faq-toggle">▾</span>
+            </button>
+            <div class="faq-a">🔊 கேட்க பொத்தானை அழுத்தினால், அந்தக் கேள்வி அல்லது விளக்கம் தமிழில் சத்தமாகப் படிக்கப்படும்.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              <span>3. என்னென்ன படிவங்கள் உள்ளன?</span>
+              <span class="faq-toggle">▾</span>
+            </button>
+            <div class="faq-a">பிறப்புச் சான்றிதழ், ரயில் பயணச்சீட்டு முன்பதிவு, தமிழ்நாடு சமூகச் சான்றிதழ் மற்றும் வங்கி பணம் செலுத்தும் படிவம் (சலான்) ஆகியவை உள்ளன.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              <span>4. படிவத்தை நிரப்பியதும் அதிகாரப்பூர்வச் சான்றிதழ் கிடைக்குமா?</span>
+              <span class="faq-toggle">▾</span>
+            </button>
+            <div class="faq-a">இந்தப் படிவங்கள் மாதிரி படிவங்கள் மட்டுமே. அரசு அல்லது வங்கி அமைப்புகளுடன் இணைக்கப்படாததால் அதிகாரப்பூர்வ சமர்ப்பிப்பாக ஏற்றுக்கொள்ளப்படாது.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              <span>5. கைப்பேசியில் பயன்படுத்த முடியுமா?</span>
+              <span class="faq-toggle">▾</span>
+            </button>
+            <div class="faq-a">ஆம். எந்தவொரு சாதாரண ஸ்மார்ட்போனிலும் இந்த இணையதளம் சரியாக இயங்கும்.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              <span>6. எனது விவரங்கள் பாதுகாப்பாக இருக்குமா?</span>
+              <span class="faq-toggle">▾</span>
+            </button>
+            <div class="faq-a">உங்கள் விவரங்கள் தனியுரிமைக் கொள்கையின்படி கையாளப்படும். விவரங்களை நிரப்பும் முன் தனியுரிமைக் கொள்கையைப் படிக்கவும்.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEEDBACK / FORM ============ -->
+  <section class="feedback" id="feedback-section">
+    <div class="container">
+      <div class="feedback-wrap">
+        <div class="feedback-head">
+          <div class="fb-icon">💬</div>
+          <h2>உங்கள் கருத்து எங்களுக்கு முக்கியம்!</h2>
+          <p>இந்த தளம் உங்களுக்கு பயனுள்ளதாக இருந்ததா? உங்கள் அனுபவத்தை எங்களுடன் பகிருங்கள்.</p>
+        </div>
+
+        <form class="form-card" id="feedbackForm" novalidate>
+          <div class="field">
+            <label class="field-label" for="name">
+              <span>பெயர்</span>
+              <span class="opt">Optional</span>
+            </label>
+            <input class="input" type="text" id="name" name="name" placeholder="எ.கா: சுப்பையா" autocomplete="name" />
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label class="field-label" for="email">
+                <span>மின்னஞ்சல்</span>
+                <span class="req">*</span>
+              </label>
+              <input class="input" type="email" id="email" name="email" placeholder="எ.கா: name@example.com" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label class="field-label" for="phone">
+                <span>தொலைபேசி எண்</span>
+                <span class="opt">Optional</span>
+              </label>
+              <input class="input" type="tel" id="phone" name="phone" placeholder="எ.கா: 9876543210" autocomplete="tel" />
+            </div>
+          </div>
+
+          <div id="statusMsg" class="status" role="status"></div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">✈ என் கருத்தைப் பகிர்கிறேன்</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><span>🌿</span><span>எளிய தமிழ் சேவை<br />மையம்</span></div>
+          <p class="footer-desc">ஊரக மற்றும் முதிய குடிமக்களுக்கான எளிய அணுகல் திறன் கொண்ட தமிழ் பொது சேவை வலைத்தளம். எளிய முறையில் அரசு மற்றும் வங்கி விண்ணப்பப் படிவங்களை நிறைவு செய்ய உறுதுணை புரிகிறது.</p>
+          <div class="footer-voice">🎧 முழு குரல் &amp; அணுகல்தன்மை ஆதரவு</div>
+        </div>
+
+        <div>
+          <h4>மாதிரி படிவங்கள் (Forms)</h4>
+          <ul>
+            <li>பிறப்புச் சான்றிதழ் படிவம்</li>
+            <li>ரயில் பயணச்சீட்டு முன்பதிவு படிவம்</li>
+            <li>தமிழ்நாடு சமூகச் சான்றிதழ் படிவம்</li>
+            <li>வங்கி பணம் செலுத்தும் படிவம் (சலான்)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>விரைவு இணைப்புகள்</h4>
+          <ul>
+            <li><a href="#top">முகப்பு</a></li>
+            <li><a href="#forms-section">படிவங்கள்</a></li>
+            <li><a href="#about">எங்களைப் பற்றி</a></li>
+            <li><a href="#feedback-section">கருத்துகள்</a></li>
+            <li><a href="#faq">உதவி மற்றும் வழிகாட்டி</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>தொடர்பு விவரங்கள்</h4>
+          <p>உதவி மையம்: 1800-425-0000<br />(கட்டணமில்லா தொலைபேசி)</p>
+          <p>மின்னஞ்சல்: sevai@eliyatamil.gov.in</p>
+          <p>செயல் நேரம்: திங்கள் முதல் சனி<br />வரை, காலை 8:00 - மாலை 7:00</p>
+          <p style="margin-top:12px;"><a href="#">தனியுரிமைக் கொள்கை</a> • <a href="#">பயன்பாட்டு விதிமுறைகள்</a><br /><a href="#">அணுகல்தன்மை</a></p>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        <span><strong>குறிப்பு:</strong></span>
+        <span class="body">இது மாதிரி படிவங்கள் மட்டுமே. அரசு, ரயில்வே அல்லது வங்கி அமைப்புகளுடன் இணைக்கப்படாமல் அதிகாரப்பூர்வ சமர்ப்பிப்பாக ஏற்றுக்கொள்ளப்படாது. பொதுமக்களின் பயிற்சி மற்றும் சுலபமான புரிதலுக்காக மட்டுமே உருவாக்கப்பட்டது.</span>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 எளிய தமிழ் சேவை மையம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</span>
+        <span>தமிழ்நாடு குடிமக்கள் பொது சேவை மாதிரி தளம்</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ================= CONFIG =================
+    // Paste your deployed Apps Script Web App URL here (must end in /exec)
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw80kmxa5CIuvDApqJrds1fynp8MdHfZUXEzkKnTWApabrM3ToiIT7Gd78hD2EgEWynwg/exec";
+
+    // ================= NAV =================
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+    menuToggle.addEventListener("click", () => mainNav.classList.toggle("open"));
+    mainNav.querySelectorAll("a").forEach(a =>
+      a.addEventListener("click", () => mainNav.classList.remove("open"))
+    );
+
+    // ================= FAQ ACCORDION =================
+    document.querySelectorAll(".faq-q").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.classList.toggle("open");
+      });
+    });
+
+    // ================= VOICE (Tamil TTS) =================
+    function speak(text) {
+      if (!("speechSynthesis" in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = "ta-IN";
+      u.rate = 0.9;
+      window.speechSynthesis.speak(u);
+    }
+
+    // ================= FORM =================
+    const form = document.getElementById("feedbackForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const statusMsg = document.getElementById("statusMsg");
+
+    function showSuccess() {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "✈ என் கருத்தைப் பகிர்கிறேன்";
+      statusMsg.className = "status show success";
+      statusMsg.textContent = "நன்றி! உங்கள் விவரங்கள் வெற்றிகரமாக சேமிக்கப்பட்டன.";
+      form.reset();
+      speak("நன்றி! உங்கள் விவரங்கள் வெற்றிகரமாக சேமிக்கப்பட்டன.");
+    }
+
+    function showError() {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "✈ என் கருத்தைப் பகிர்கிறேன்";
+      statusMsg.className = "status show error";
+      statusMsg.textContent = "பிழை ஏற்பட்டது. தயவுசெய்து மீண்டும் முயற்சிக்கவும்.";
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      statusMsg.className = "status";
+      statusMsg.textContent = "";
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+
+      if (!email || !document.getElementById("email").checkValidity()) {
+        statusMsg.className = "status show error";
+        statusMsg.textContent = "சரியான மின்னஞ்சல் முகவரியை உள்ளிடவும்.";
+        document.getElementById("email").focus();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "சமர்ப்பிக்கப்படுகிறது...";
+
+      const url = SCRIPT_URL + "?" + new URLSearchParams({ name, email, phone });
+
+      fetch(url, { method: "GET", mode: "no-cors" })
+        .then(() => showSuccess())
+        .catch(() => showError());
+    });
+  </script>
+</body>
+</html>
